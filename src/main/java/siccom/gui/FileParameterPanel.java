@@ -141,7 +141,7 @@ public class FileParameterPanel extends JPanel {
 		TableColumnModel header = table.getColumnModel();
 
 		try {
-			String fileName = Main.getLocalFileName(parameterFile.getFileName());
+			String fileName = parameterFile.getFileName();
 			file = new FileOutputStream(fileName+"_mod");
 		} catch (FileNotFoundException e1) {
 			JOptionPane.showMessageDialog(pFrame, e1, "Warning",

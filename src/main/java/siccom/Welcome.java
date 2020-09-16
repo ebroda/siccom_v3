@@ -64,19 +64,17 @@ public class Welcome extends JFrame implements ActionListener
 	Frame frame = new JFrame();
 	
 	
-	private void readMainFile(String fn) 
-	{
+	private void readMainFile(String filename)  {
 		File file;
 		String fileName;
-		InputStreamReader in = null;
+		InputStreamReader in;
 		try {
-			fileName = fn + infoFileExtension ;
-			file = new File(Main.getLocalFileName(fileName));
+			fileName = filename + infoFileExtension ;
+			file = Main.getLocalFile(fileName);
 			
 			if (file.isFile()) {
 				in = new InputStreamReader(new FileInputStream(file));
-			} 
-			else {
+			} else {
 				in = Main.getArchiveFile(fileName);
 			}
 
